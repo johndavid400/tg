@@ -1,0 +1,10 @@
+%h2 New Event
+
+= form_for @event do |f|
+  .clearfix
+    = f.label :name
+    = f.text_field :name
+  .clearfix
+    = f.label :eat_time
+    = f.datetime_select :eat_time
+  = f.submit

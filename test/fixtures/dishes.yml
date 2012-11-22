@@ -2,10 +2,12 @@
 
 one:
   name: MyString
-  prep_time: 1
+  start_time: 2012-11-22 13:22:45
   cook_time: 1
+  event_id: 1
 
 two:
   name: MyString
-  prep_time: 1
+  start_time: 2012-11-22 13:22:45
   cook_time: 1
+  event_id: 1

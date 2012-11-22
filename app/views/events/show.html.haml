@@ -1,0 +1,19 @@
+%h2= "Event: #{@event.name} - #{@event.created_at.strftime("%m/%d/%Y")}"
+.eat_time
+  %h3
+    Eat Time:
+    = @event.eat_time.strftime("%I:%M %p")
+.btn.pull-right= link_to "New Dish", new_dish_path(event: @event.id)
+- if @event
+  %table.table.table-bordered.table-striped
+    %tr
+      %th Dish Name
+      %th Dish Prep Time (hrs)
+      %th Start Cooking at:
+    - @event.dishes.each do |dish|
+      %tr
+        %td= dish.name
+        %td= dish.cook_time
+        %td= dish.start_time.strftime("%I:%M %p")
+
+

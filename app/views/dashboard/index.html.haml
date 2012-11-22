@@ -1,2 +1,11 @@
 %h2
   Hello
+
+.btn.pull-right= link_to "New Event", new_event_path
+
+%h4
+  - if @events
+    %ul
+      - @events.each do |event|
+        %li= link_to event.name, event_path(event)
+

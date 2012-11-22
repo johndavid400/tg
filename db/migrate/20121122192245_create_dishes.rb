@@ -2,8 +2,9 @@ class CreateDishes < ActiveRecord::Migration
   def change
     create_table :dishes do |t|
       t.string :name
-      t.integer :prep_time
-      t.integer :cook_time
+      t.datetime :start_time
+      t.float :cook_time
+      t.integer :event_id
 
       t.timestamps
     end

@@ -45,8 +45,6 @@ group :test do
   gem 'database_cleaner', '0.7.2'
   gem 'rspec-rails'
   gem "capybara"
-  gem 'pry-rails'
-  gem 'pry'
   gem 'factory_girl'
   gem 'faker'
   gem 'launchy'
@@ -62,3 +60,5 @@ gem 'bootstrap-sass-rails'
 gem 'event-calendar', :require => 'event_calendar'
 gem 'jquery_datepicker'
 
+gem 'pry-rails'
+gem 'pry'
