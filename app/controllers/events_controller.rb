@@ -18,4 +18,20 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to root_path
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update_attributes(params[:event])
+    redirect_to root_path
+  end
+
 end

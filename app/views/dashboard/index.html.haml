@@ -1,11 +1,22 @@
 %h2
   Select an event below
 
-.btn.pull-right= link_to "New Event", new_event_path
+.row-fluid
+  .btn.pull-right= link_to "New Event", new_event_path
 
 %h3
   - if @events
-    %ul
+    %table.table.table-bordered.table-striped
+      %tr
+        %th Event Name
+        %th Event Date
+        %th Actions
       - @events.each do |event|
-        %li= link_to event.name, event_path(event)
+        %tr
+          %td= link_to event.name, event_path(event)
+          %td= event.created_at.strftime("%m/%d/%Y")
+          %td
+            = link_to "Edit", edit_event_path(event)
+            |
+            = link_to 'Delete', event, confirm: 'Are you sure?', method: :delete
 

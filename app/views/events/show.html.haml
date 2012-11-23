@@ -3,17 +3,21 @@
   %h3
     Eat Time:
     = @event.eat_time.strftime("%I:%M %p")
-.btn.pull-right= link_to "New Dish", new_dish_path(event: @event.id)
+.row-fluid
+  .btn.pull-right= link_to "New Dish", new_dish_path(event: @event.id)
 - if @event
   %table.table.table-bordered.table-striped
     %tr
       %th Dish Name
       %th Dish Prep Time (hrs)
       %th Start Cooking at:
+      %th Actions
     - @event.dishes.each do |dish|
       %tr
         %td= dish.name
         %td= dish.cook_time
         %td= dish.start_time.strftime("%I:%M %p")
-
-
+        %td
+          = link_to "Edit", edit_dish_path(dish)
+          |
+          = link_to 'Delete', dish, confirm: 'Are you sure?', method: :delete
