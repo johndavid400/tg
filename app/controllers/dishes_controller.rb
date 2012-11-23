@@ -23,6 +23,7 @@ class DishesController < ApplicationController
 
   def update
     @dish = Dish.find(params[:id])
+    @dish.start_time = @dish.event.eat_time - @dish.cook_time.hours
     if @dish.update_attributes(params[:dish])
       redirect_to event_path(@dish.event), notice: 'Dish was successfully updated.'
     else
