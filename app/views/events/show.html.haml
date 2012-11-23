@@ -1,11 +1,11 @@
-%h2= "Event: #{@event.name} - #{@event.created_at.strftime("%m/%d/%Y")}"
-.eat_time
-  %h3
-    Eat Time:
-    = @event.eat_time.strftime("%I:%M %p")
-.row-fluid
-  .btn.pull-right= link_to "New Dish", new_dish_path(event: @event.id)
 - if @event
+  %h2= "Event: #{@event.name} - #{@event.created_at.strftime("%m/%d/%Y")}"
+  .eat_time
+    %h3
+      Eat Time:
+      = @event.eat_time.strftime("%I:%M %p")
+  .row-fluid
+    .btn.pull-right= link_to "New Dish", new_dish_path(event: @event.id)
   %table.table.table-bordered.table-striped
     %tr
       %th Dish Name
